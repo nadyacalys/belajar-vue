@@ -22,6 +22,7 @@ const categories = [
 ];
 </script>
 
+
 <style scoped>
 .section-title {
   font-size: 1.8rem;
