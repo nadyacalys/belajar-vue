@@ -1,4 +1,9 @@
 <script setup>
+import { ref, computed } from 'vue';
+import SearchBar from '@/components/event/SearchBar.vue';
+
+const searchQuery = ref('');
+
 const events = [
   {
     id: 1, title: 'Vue.js Mastery Workshop', date: 'Oct 12, 2026', loc: '📍 Tech Hub, Jakarta',
@@ -25,6 +30,14 @@ const events = [
     cat: 'Conference', desc: 'An exclusive year-end conference for community leaders to formulate sustainable ecosystem development strategies.'
   }
 ];
+
+const filteredEvents = computed(() => {
+  const q = searchQuery.value.toLowerCase().trim();
+  if (!q) return events;
+  return events.filter(e =>
+    e.title.toLowerCase().includes(q) || e.loc.toLowerCase().includes(q)
+  );
+});
 </script>
 
 <template>
@@ -34,11 +47,13 @@ const events = [
       <p class="section-desc">Discover workshops, seminars, tech meetups, and competitions near you.</p>
     </div>
 
+    <SearchBar v-model="searchQuery" />
+
     <!-- LAYOUT SYSTEM: ADAPTIVE GRID -->
     <div class="event-grid">
 
       <!-- VISUAL HIERARCHY: GROUPING & COMMON REGIONS -->
-      <div class="event-card" v-for="event in events" :key="event.id">
+      <div class="event-card" v-for="event in filteredEvents" :key="event.id">
         <div class="event-body">
           <div class="event-meta">
             <!-- LABEL CONTRAST: Recognition over Recall -->

@@ -18,10 +18,9 @@ const categories = [
   { name: 'Art & Design', icon: '??', count: 12 },
   { name: 'Business', icon: '??', count: 30 },
   { name: 'Health & Wellness', icon: '?????', count: 15 },
-  { name: 'Food & Drink', icon: '??', count: 22 },
+  { name: 'Food & Drink', icon: '??', count: 22 }
 ];
 </script>
-
 
 <style scoped>
 .section-title {
@@ -40,15 +39,15 @@ const categories = [
   background: white;
   padding: 2rem;
   border-radius: 16px;
+  text-align: center;
   border: 1px solid #eee;
   transition: all 0.3s ease;
-  text-align: center;
   cursor: pointer;
 }
 
 .category-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
   border-color: #6644ff;
 }
 
