@@ -11,6 +11,7 @@ const breadcrumbs = computed(() => {
     if (path.includes(':')) {
       path = route.path;
     }
+
     return {
       name: m.name,
       path: path,
@@ -58,6 +59,7 @@ const breadcrumbs = computed(() => {
   background: rgba(255, 255, 255, 0.05);
   border-radius: 8px;
 }
+
 .breadcrumb ul {
   list-style: none;
   display: flex;
@@ -66,22 +68,27 @@ const breadcrumbs = computed(() => {
   align-items: center;
   gap: 0.5rem;
 }
+
 .breadcrumb a {
   text-decoration: none;
   color: var(--primary, #6644ff);
   font-weight: 500;
 }
+
 .breadcrumb a:hover {
   text-decoration: underline;
 }
+
 .separator {
   color: #888;
   margin: 0 0.5rem;
 }
+
 .active-crumb {
   color: #333;
   font-weight: 600;
 }
+
 @media (prefers-color-scheme: dark) {
   .active-crumb {
     color: #ccc;

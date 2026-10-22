@@ -26,6 +26,7 @@ defineEmits(['update:modelValue']);
   max-width: 500px;
   margin-bottom: var(--space-4);
 }
+
 .search-input {
   width: 100%;
   padding: var(--space-3) var(--space-4);
@@ -35,6 +36,7 @@ defineEmits(['update:modelValue']);
   outline: none;
   transition: border-color 0.2s;
 }
+
 .search-input:focus {
   border-color: var(--primary);
 }
